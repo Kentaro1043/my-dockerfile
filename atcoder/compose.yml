@@ -1,0 +1,18 @@
+services:
+  atcoder:
+    build: src
+    container_name: atcoder
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - workspace:/home/atcoder/workspace
+      - acc:/home/atcoder/.config/atcoder-cli-nodejs
+      - oj:/home/atcoder/.local/share/online-judge-tools
+
+volumes:
+  workspace:
+    name: atcoder_workspace
+  acc:
+    name: atcoder_acc
+  oj:
+    name: atcoder_oj
